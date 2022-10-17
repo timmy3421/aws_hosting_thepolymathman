@@ -204,7 +204,7 @@ class AwsHostingThepolymathmanQaStack(Stack):
             ),
             domain_names=[domain,subdomain],
             minimum_protocol_version=cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
-            geo_restriction=cloudfront.GeoRestriction.allowlist("US","CA","IN","JP")
+            #geo_restriction=cloudfront.GeoRestriction.allowlist("US","CA","IN","JP")
         )
         # Create Domain Records.
         # ipv4 Records.
