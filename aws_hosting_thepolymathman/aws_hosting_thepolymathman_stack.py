@@ -1,5 +1,3 @@
-from math import dist
-from re import A
 from aws_cdk import (
     Stack,
     RemovalPolicy,

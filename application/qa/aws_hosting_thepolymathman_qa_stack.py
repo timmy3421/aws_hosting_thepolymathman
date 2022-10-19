@@ -1,9 +1,6 @@
-from math import dist
-from re import A
 from aws_cdk import (
     Duration,
     Stack,
-    Tags,
     RemovalPolicy,
     SecretValue,
     aws_iam as iam, 
@@ -18,7 +15,6 @@ from aws_cdk import (
     aws_cloudfront_origins as origins
 )
 from constructs import Construct
-import json
 import boto3
 import logging
 import sys
