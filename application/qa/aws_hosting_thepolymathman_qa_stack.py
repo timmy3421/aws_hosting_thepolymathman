@@ -144,30 +144,30 @@ class AwsHostingThepolymathmanQaStack(Stack):
             comment=idSecHeaders,
             response_headers_policy_name=f"{idSecHeaders}Policy",
             security_headers_behavior=cloudfront.ResponseSecurityHeadersBehavior(
-                content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
-                    # https://stackoverflow.com/questions/34669075/can-content-security-policy-be-made-compatible-with-google-analytics-and-adsense
-                    # New allows google on site. 
-                    content_security_policy="default-src 'self' googleads.g.doubleclick.net; "
-                    "img-src 'self' data: storage.googleapis.com pagead2.googlesyndication.com; child-src 'none'; frame-ancestors 'self'; "
-                    "object-src 'none'; "
-                    "script-src 'self' 'unsafe-inline' data: pagead2.googlesyndication.com partner.googleadservices.com tpc.googlesyndication.com www.googletagservices.com adservice.google.com adservice.google.ad; "
-                    "style-src 'unsafe-inline' 'self'; font-src 'self' fonts.googleapis.com; "
-                    "frame-src www.youtube-nocookie.com;",
-                    # Old, blocks google ads
-                    # content_security_policy="default-src 'self'; "
-                    # "img-src 'self' data: https://*; child-src 'none'; "
-                    # "object-src 'none'; script-src 'unsafe-inline' 'self' 'unsafe-eval'; "
-                    # "style-src 'unsafe-inline' 'self'; font-src 'self' data:; "
-                    # "frame-src www.youtube-nocookie.com;",
+                # content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
+                #     # https://stackoverflow.com/questions/34669075/can-content-security-policy-be-made-compatible-with-google-analytics-and-adsense
+                #     # New allows google on site. 
+                #     content_security_policy="default-src 'self' googleads.g.doubleclick.net; "
+                #     "img-src 'self' data: storage.googleapis.com pagead2.googlesyndication.com; child-src 'none'; frame-ancestors 'self'; "
+                #     "object-src 'none'; "
+                #     "script-src 'self' 'unsafe-inline' data: pagead2.googlesyndication.com partner.googleadservices.com tpc.googlesyndication.com www.googletagservices.com adservice.google.com adservice.google.ad; "
+                #     "style-src 'unsafe-inline' 'self'; font-src 'self' fonts.googleapis.com; "
+                #     "frame-src www.youtube-nocookie.com;",
+                #     # Old, blocks google ads
+                #     # content_security_policy="default-src 'self'; "
+                #     # "img-src 'self' data: https://*; child-src 'none'; "
+                #     # "object-src 'none'; script-src 'unsafe-inline' 'self' 'unsafe-eval'; "
+                #     # "style-src 'unsafe-inline' 'self'; font-src 'self' data:; "
+                #     # "frame-src www.youtube-nocookie.com;",
 
-                    # From StackOverFlow
-                    # default-src 'self' googleads.g.doubleclick.net;
-                    # script-src 'self' 'unsafe-inline' data: pagead2.googlesyndication.com storage.googleapis.com googleads.g.doubleclick.net ajax.googleapis.com; 
-                    # img-src 'self' data: storage.googleapis.com pagead2.googlesyndication.com; 
-                    # style-src 'self' 'unsafe-inline'; 
-                    # font-src 'self' fonts.googleapis.com; frame-ancestors 'self'; object-src 'self'
-                    override=True,
-                ),
+                #     # From StackOverFlow
+                #     # default-src 'self' googleads.g.doubleclick.net;
+                #     # script-src 'self' 'unsafe-inline' data: pagead2.googlesyndication.com storage.googleapis.com googleads.g.doubleclick.net ajax.googleapis.com; 
+                #     # img-src 'self' data: storage.googleapis.com pagead2.googlesyndication.com; 
+                #     # style-src 'self' 'unsafe-inline'; 
+                #     # font-src 'self' fonts.googleapis.com; frame-ancestors 'self'; object-src 'self'
+                #     override=True,
+                # ),
                 content_type_options=cloudfront.ResponseHeadersContentTypeOptions(
                     override=True
                 ),
