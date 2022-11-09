@@ -1,9 +1,6 @@
-from math import dist
-from re import A
 from aws_cdk import (
     Duration,
     Stack,
-    Tags,
     RemovalPolicy,
     SecretValue,
     aws_iam as iam, 
@@ -18,7 +15,6 @@ from aws_cdk import (
     aws_cloudfront_origins as origins
 )
 from constructs import Construct
-import json
 import boto3
 import logging
 import sys
@@ -148,14 +144,6 @@ class AwsHostingThepolymathmanQaStack(Stack):
             comment=idSecHeaders,
             response_headers_policy_name=f"{idSecHeaders}Policy",
             security_headers_behavior=cloudfront.ResponseSecurityHeadersBehavior(
-                content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
-                    content_security_policy="default-src 'self'; "
-                    "img-src 'self' data: https://*; child-src 'none'; "
-                    "object-src 'none'; script-src 'unsafe-inline' 'self' 'unsafe-eval'; "
-                    "style-src 'unsafe-inline' 'self'; font-src 'self' data:; "
-                    "frame-src www.youtube-nocookie.com;",
-                    override=True,
-                ),
                 content_type_options=cloudfront.ResponseHeadersContentTypeOptions(
                     override=True
                 ),
