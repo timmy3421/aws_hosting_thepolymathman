@@ -145,12 +145,7 @@ class AwsHostingThepolymathmanProdStack(Stack):
             response_headers_policy_name=f"{idSecHeaders}Policy",
             security_headers_behavior=cloudfront.ResponseSecurityHeadersBehavior(
                 content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
-                    content_security_policy="default-src 'self'; "
-                    "img-src 'self' data: https://*; child-src 'none'; "
-                    "object-src 'none'; script-src 'unsafe-inline' 'self' 'unsafe-eval'; "
-                    "style-src 'unsafe-inline' 'self'; font-src 'self' data:; "
-                    "frame-src www.youtube-nocookie.com;",
-                    override=True,
+                    override=True
                 ),
                 content_type_options=cloudfront.ResponseHeadersContentTypeOptions(
                     override=True
