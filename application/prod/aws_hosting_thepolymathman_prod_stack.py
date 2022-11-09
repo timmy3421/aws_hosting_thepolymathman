@@ -144,9 +144,6 @@ class AwsHostingThepolymathmanProdStack(Stack):
             comment=idSecHeaders,
             response_headers_policy_name=f"{idSecHeaders}Policy",
             security_headers_behavior=cloudfront.ResponseSecurityHeadersBehavior(
-                content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
-                    override=True
-                ),
                 content_type_options=cloudfront.ResponseHeadersContentTypeOptions(
                     override=True
                 ),
